@@ -18,7 +18,7 @@ export class BanqueHttpService {
   getClients(): Observable<Client[]> {
 
     return this.httpClient
-      .get<Client[]>("http://wildfly.westeurope.cloudapp.azure.com/clients")
+      .get<Client[]>("https://wildfly.westeurope.cloudapp.azure.com/clients")
       .pipe(
         retry(3), // 3 tentatives
         catchError( error => new ErrorObservable(error.error.message))
@@ -28,7 +28,7 @@ export class BanqueHttpService {
   getClient(id: number): Observable<Client> {
     return this.httpClient
       .get<Client>(
-        "http://wildfly.westeurope.cloudapp.azure.com/clients/"+id
+        "https://wildfly.westeurope.cloudapp.azure.com/clients/"+id
       );
   }
 
@@ -44,7 +44,7 @@ export class BanqueHttpService {
 
     return this.httpClient
       .post<Client[]>(
-        "http://wildfly.westeurope.cloudapp.azure.com/clients/post",
+        "https://wildfly.westeurope.cloudapp.azure.com/clients/post",
         params,
         options
       );
