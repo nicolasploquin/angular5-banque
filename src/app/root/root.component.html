@@ -1,5 +1,19 @@
-<h1>Ma Banque en ligne avec Angular !</h1>
-
-<app-demo></app-demo>
-
-<app-clients></app-clients>
+<header>
+  <mat-toolbar color="primary">
+    <h1>Ma Banque</h1>
+      <a routerLink="/demo" mat-button>Démo</a>
+      <a routerLink="/clients" mat-button>Clients</a>
+      <a routerLink="/client/form" mat-button>Nouveau</a>
+    <span class="fill-flex"></span>
+    <span (click)="deconnexion()">{{username}}</span>
+    <button mat-icon-button (click)="connexion()" [hidden]="username">
+      <mat-icon>fingerprint</mat-icon>
+    </button>
+  </mat-toolbar>
+  <app-authentification [identifiant]="username"
+   [hidden]="!showAuthForm" (auth)="authentification($event)"
+  ></app-authentification>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

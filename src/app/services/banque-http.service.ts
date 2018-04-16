@@ -1,40 +1,54 @@
 import { Injectable } from '@angular/core';
 
 import { Client } from '../model/client';
+import { Observable } from 'rxjs/Observable';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { catchError, retry } from 'rxjs/operators';
+import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
-export class BanqueLocalService {
+export class BanqueHttpService {
 
-  private _clients: Client[] = [];
+  private httpClient: HttpClient;
 
-  constructor() {
-    this.load();
+  constructor(httpClient: HttpClient) {
+    this.httpClient = httpClient;
   }
 
-  private load(): void {
-    this._clients = JSON.parse(localStorage.getItem("data")).clients;
+  getClients(): Observable<Client[]> {
+
+    return this.httpClient
+      .get<Client[]>("http://wildfly.westeurope.cloudapp.azure.com/clients")
+      .pipe(
+        retry(3), // 3 tentatives
+        catchError( error => new ErrorObservable(error.error.message))
+      );
   }
 
-  private save(): void {
-    localStorage.setItem("data", JSON.stringify({clients: this._clients}));
+  getClient(id: number): Observable<Client> {
+    return this.httpClient
+      .get<Client>(
+        "http://wildfly.westeurope.cloudapp.azure.com/clients/"+id
+      );
   }
 
-  getClients(): Client[] {
-    return this._clients;
-  }
+  addClient(client: Client): Observable<Client[]> {
 
-  getClient(id: number): Client {
-    return this._clients.find(cli => cli.id === id);
-  }
+    const options = {
+      headers : new HttpHeaders({
+        "Content-Type": "application/x-www-form-urlencoded"
+      })
+    };
 
-  addClient(client: Client): void {
-    // client.id = Math.max(...this._clients.map(cli => cli.id)) + 1;
-    // client.id = this._clients.reduce(function(cli1, cli2){
-    //     return cli1.id > cli2.id ? cli1 : cli2;
-    // }).id + 1;
-    client.id = this._clients.reduce((cli1, cli2) =>  cli1.id > cli2.id ? cli1 : cli2).id + 1;
-    this._clients.push(client);
-    this.save();
+    const params = `nom=${client.nom}&prenom=${client.prenom}`;
+
+    return this.httpClient
+      .post<Client[]>(
+        "http://wildfly.westeurope.cloudapp.azure.com/clients/post",
+        params,
+        options
+      );
+
   }
 
 

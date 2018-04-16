@@ -1,11 +1,11 @@
 import { browser, by, element } from 'protractor';
 
-export class AppPage {
+export class ClientFormPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/client/form');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getInputNomLabel() {
+    return element(by.css('form label[for="champ-nom"]')).getText();
   }
 }
