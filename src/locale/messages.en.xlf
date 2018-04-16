@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="clientsPlurielComptes" datatype="html">
+        <source> (<x id="ICU" equiv-text="{cli.comptes.length, plural, =0 {...} =1 {...} other {...}}"/>)</source>
+        <target> (<x id="ICU" equiv-text="{cli.comptes.length, plural, =0 {...} =1 {...} other {...}}"/>)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7be0d47f1bd3237ec3ae92b9e5cf1bc91f6a98c5" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {aucun} =1 {un compte} other {<x id="INTERPOLATION" equiv-text="{{cli.comptes.length}}"/> comptes} }</source>
+        <target>{VAR_PLURAL, plural, =0 {none} =1 {one account} other {<x id="INTERPOLATION" equiv-text="{{cli.comptes.length}}"/> accounts} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormTitre" datatype="html">
+        <source>Nouveau client</source>
+        <target>New customer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormInputNom" datatype="html">
+        <source>Nom</source>
+        <target>Last name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormInputPrenom" datatype="html">
+        <source>Prénom</source>
+        <target>First name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormInputPrenomErreur" datatype="html">
+        <source>Le prénom doit contenir 3 lettres au minimum</source>
+        <target>First name must contain at least 3 letters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormBoutonEnregistrer" datatype="html">
+        <source>Enregistrer</source>
+        <target>Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

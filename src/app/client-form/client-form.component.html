@@ -1,0 +1,14 @@
+<h2 i18n="Titre du formulaire|Création d'un nouveau client@@clientFormTitre">Nouveau client</h2>
+<form (submit)="enregistrerClient()" #clientForm="ngForm">
+  <label for="champ-nom" i18n="@@clientFormInputNom">Nom</label>
+  <input id="champ-nom" #champNom="ngModel" name="nom" required [(ngModel)]="client.nom"
+    [class]="champNom.invalid?'erreur':''"
+  />
+
+  <br/>
+  <label for="champ-prenom" i18n="@@clientFormInputPrenom" >Prénom</label>
+  <input id="champ-prenom" #champPrenom="ngModel" name="prenom" [(ngModel)]="client.prenom" pattern="[a-zA-Z]{3,}" />
+  <span [hidden]="champPrenom.valid" i18n="@@clientFormInputPrenomErreur">Le prénom doit contenir 3 lettres au minimum</span>
+  <br/>
+  <button type="submit" [disabled]="clientForm.invalid" i18n="@@clientFormBoutonEnregistrer">Enregistrer</button>
+</form>

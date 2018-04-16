@@ -1,0 +1,9 @@
+<h2>Liste des clients</h2>
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['/client',cli.id]" *ngFor="let cli of clients | slice:0:100" >
+    {{cli.prenom}} {{cli.nom | uppercase }}&nbsp;
+    <span *ngIf="cli.comptes && cli.comptes.length != 0"
+          i18n="@@clientsPlurielComptes"> ({cli.comptes.length, plural, =0 {aucun} =1 {un compte} other {{{cli.comptes.length}} comptes}})</span>
+    <!--<a [routerLink]="['/client',cli.id]" mat-icon-button ><mat-icon>info</mat-icon></a>-->
+  </a>
+</mat-nav-list>

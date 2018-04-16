@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="clientsPlurielComptes" datatype="html">
+        <source> (<x id="ICU" equiv-text="{cli.comptes.length, plural, =0 {...} =1 {...} other {...}}"/>)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7be0d47f1bd3237ec3ae92b9e5cf1bc91f6a98c5" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {aucun} =1 {un compte} other {<x id="INTERPOLATION" equiv-text="{{cli.comptes.length}}"/> comptes} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/clients/clients.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormTitre" datatype="html">
+        <source>Ajouter client</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Création d&apos;un nouveau client</note>
+        <note priority="1" from="meaning">Titre du formulaire</note>
+      </trans-unit>
+      <trans-unit id="clientFormInputNom" datatype="html">
+        <source>Nom</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormInputPrenom" datatype="html">
+        <source>Prénom</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormInputPrenomErreur" datatype="html">
+        <source>Le prénom doit contenir 3 lettres au minimum</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="clientFormBoutonEnregistrer" datatype="html">
+        <source>Enregistrer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/client-form/client-form.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
