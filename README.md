@@ -2,5 +2,5 @@
 
 Projet de formation Angular 5
 
-Déploiement dans un App Service Azure : [https://angular5-banque.azurewebsites.net/](https://angular5-banque.azurewebsites.net/).
+Déploiement dans un App Service Azure : [http://angular5-banque.azurewebsites.net/](http://angular5-banque.azurewebsites.net/).
 
